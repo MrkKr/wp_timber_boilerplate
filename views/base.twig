@@ -1,0 +1,14 @@
+{% block html_head_container %}
+	{% include 'html-header.twig' %}
+{% endblock %}
+
+	<body class="{{body_class}}">
+		{% include 'layouts/header.twig' %}
+
+		{% block content %}
+			<p>Sorry, no content</p>
+		{% endblock %}
+
+		{% include 'layouts/footer.twig' %}
+	</body>
+</html>

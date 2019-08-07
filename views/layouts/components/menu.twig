@@ -1,0 +1,26 @@
+{% if menu %}
+	<ul id="header-menu" class="nav navbar-nav mr-auto">
+    {% for item in menu.items %}
+			{% if item.children %}
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{item.title}} <span class="arrow-menu-main"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						{% for child in item.children %}
+							<li class="nav-item {{ child.classes|join(' ') }}">
+								<a href="{{ child.link }}" class="dropdown-item nav-link">
+									<span data-letters="{{child.title}}">{{child.title}}</span>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% else %}
+				<li class="nav-main-item {{ item.classes|join(' ') }}">
+					<a class="nav-link" href="{{ item.link }}">
+						<span data-letters="{{item.title}}">{{item.title}}</span>
+					</a>
+				</li>
+			{% endif %}
+    {% endfor %}
+	</ul>
+{% endif %}

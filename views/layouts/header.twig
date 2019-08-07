@@ -1,0 +1,17 @@
+<header id="header">
+  <nav class="navbar navbar-expand-lg navbar-light mb-0 bg-white" role="navigation">
+    <div class="container">
+      {# {% include 'layouts/components/logo.twig' %} #}
+      <div class="collapse navbar-collapse" id="navbarContent">
+        {% include "layouts/components/menu.twig" with {'items': menu.get_items} %}
+      </div>
+      {# {% include 'layouts/components/user-icons.twig' %}
+      {% include 'layouts/components/searchform-lang.twig' %} #}
+    </div>
+  </nav>
+</header>
+<header id="header-mobile">
+  <nav class="navbar navbar-light mb-0 bg-white" role="navigation">
+
+  </nav>
+</header>
